@@ -7,6 +7,14 @@ void SetColor(int x){
 	SetConsoleTextAttribute(h,x);
 }
 
+void gotoxy(int x, int y) //goto语句
+{
+	COORD pos;
+	pos.X = x - 1;
+	pos.Y = y - 1;
+	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE),pos);
+}
+
 void Actor::Draw()
 {
   SetColor(mColor);
@@ -16,6 +24,7 @@ void Actor::Draw()
 void Actor::Talk(Actor* actor)
 {
   actor->SetPosition(x,y);
+  gotoxy
 }
 
 Actor::Actor(Game* game)
