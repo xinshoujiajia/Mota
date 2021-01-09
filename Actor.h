@@ -26,6 +26,6 @@ public:
   void SetColor(int color){mColor=color;}
   int GetColor(){return mColor;}
   
-  void Talk(Actor* actor);
+  void MoveTo(Actor* actor);
   void Draw();
 }
