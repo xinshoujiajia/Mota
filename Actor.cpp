@@ -7,7 +7,7 @@ void SetColor(int x){
 	SetConsoleTextAttribute(h,x);
 }
 
-void gotoxy(int x, int y) //goto语句
+void GoToXY(int x, int y) //goto语句
 {
 	COORD pos;
 	pos.X = x - 1;
@@ -21,15 +21,16 @@ void Actor::Draw()
   std::cout<<mIcon;
 }
 
-void Actor::Talk(Actor* actor)
+void Actor::MoveTo(Actor* actor)
 {
-  actor->SetPosition(x,y);
-  gotoxy
+  actor->SetPosition(X,Y);
+	GoToXY(X,Y);
+	actor->Draw();
 }
 
 Actor::Actor(Game* game)
-  :x(0)
-  ,y(0)
+  :X(0)
+  ,Y(0)
   ,mColor(15)
   ,mIcon("  ")
   ,mName("None")
