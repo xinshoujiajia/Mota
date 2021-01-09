@@ -9,6 +9,8 @@ public:
 	void RunLoop();
 	void Shutdown();
   void ChangeLevel(int level);
+	
+	Charactor* GetPlayer(){return mPlayer;}
 
 private:
 	void ProcessInput();
@@ -18,6 +20,8 @@ private:
 	void UnloadData();
 
 	bool mIsRunning;
-  int mLevel;
+	class Actor* mActors[12][12];
+	class Charactor* mPlayer;
+	int mLevel;
 
 };
